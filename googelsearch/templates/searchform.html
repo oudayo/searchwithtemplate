@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="query" placeholder="Search query">
+  <select name="reading_level">
+    <option value="1">Level 1 - Starter</option>
+    <option value="2">Level 2 - Beginner</option>
+    <option value="3">Level 3 - Average reader</option>
+    <option value="4">Level 4 - Advanced reader</option>
+    <option value="5">Level 5 - Expert reader</option>
+  </select>
+  <input type="submit" value="Search">
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if results %}
+{% for result in results %}
+  <div class="card">
+    {% if result.pagemap.cse_image %}
+      <img src="{{ result.pagemap.cse_image.0.src }}" class="card-img-top" width="200px" height="200px">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title"><a href="{{result.link}}">{{ result.title }}</a></h5>
+      <p class="card-text">{{ result.snippet }}</p>
+      <a href="{{result.link}}" target="_blank"><p class="card-text text-muted">Source: {{ result.link }}</p></a>
+    </div>
+  </div>
+{% endfor %}
+{% else %}
+<h1>result not found</h1>
+{% endif %}
+
+
+</body>
+</html>
